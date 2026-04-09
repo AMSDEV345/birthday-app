@@ -1,83 +1,97 @@
-/* BACKGROUND */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #2b0a3d;
+  color: white;
+}
+
+/* BACKGROUND IMAGE */
+.app {
+  min-height: 100vh;
+  padding: 20px;
   background-image: url("/images/wassy1.jpg");
   background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+  background-position: center;
   background-attachment: fixed;
 }
 
-/* DARK OVERLAY FOR READABILITY */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
-}
-
-/* MAIN APP */
-.app {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-  color: white;
+/* MOBILE FIX (IMPORTANT) */
+@media (max-width: 768px) {
+  .app {
+    background-attachment: scroll;
+    background-size: cover;
+  }
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 20px;
 }
 
-.hero h1 {
-  font-size: 40px;
-}
-
-/* CARDS */
-.card {
-  background: rgba(255, 255, 255, 0.1);
+/* BOX DESIGN */
+.box {
+  background: rgba(255,255,255,0.08);
   margin: 20px 0;
   padding: 20px;
   border-radius: 15px;
   backdrop-filter: blur(8px);
 }
 
+/* CENTER */
+.center {
+  text-align: center;
+}
+
+/* ITEM BOX */
+.item {
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
 
-/* BOXES */
-.box {
-  background: rgba(255,255,255,0.2);
-  padding: 15px;
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
   border-radius: 12px;
+  text-align: center;
 }
 
-/* VIDEO */
-video {
+.card img,
+.card video {
   width: 100%;
   border-radius: 10px;
 }
 
 /* QUOTE */
 .quote {
-  font-style: italic;
   font-size: 18px;
-  text-align: center;
+  font-style: italic;
+}
+
+/* LETTER */
+.letter {
+  white-space: pre-wrap;
+  line-height: 1.6;
 }
 
 /* BUTTON */
 button {
-  padding: 12px 20px;
+  padding: 10px 20px;
   border: none;
   border-radius: 10px;
-  background: purple;
+  background: #a855f7;
   color: white;
   cursor: pointer;
 }
@@ -87,21 +101,4 @@ footer {
   text-align: center;
   margin-top: 30px;
   opacity: 0.7;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 26px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 15px;
-  }
 }
